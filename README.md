@@ -22,8 +22,6 @@ sudo rosdep init
 
 rosdep update
 
-*2行連続は一度にコピペで実行
-
 grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
 echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
 
