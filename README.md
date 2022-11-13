@@ -21,3 +21,19 @@ sudo apt install python3-rosdep
 sudo rosdep init
 
 rosdep update
+
+*2行連続は一度にコピペで実行
+
+grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
+echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
+
+grep -F "ROS_MASTER_URI" ~/.bashrc ||
+echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc
+
+grep -F "ROS_HOSTNAME" ~/.bashrc ||
+echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
+
+sudo mkdir -p $HOME/.ros/
+
+sudo chown $USER:$USER $HOME/.ros/ -R
+
